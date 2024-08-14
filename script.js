@@ -29,10 +29,21 @@ function calculate() {
     }
 }
 
-// Función para mostrar/ocultar la vista de números primos
+// Mostrar la vista de números primos
 document.getElementById('primesButton').addEventListener('click', function () {
     calculator.style.display = 'none';
     primesView.style.display = 'block';
+});
+
+// Volver a la calculadora
+document.getElementById('backToCalculator').addEventListener('click', function () {
+    calculator.style.display = 'block';
+    primesView.style.display = 'none';
+});
+
+// Navegar por los números primos
+document.getElementById('nextPrime').addEventListener('click', function (event) {
+    navigatePrimes(event);
 });
 
 // Función para navegar por los números primos
@@ -44,14 +55,14 @@ function navigatePrimes(event) {
     }
 
     // Calcular el siguiente número primo
-    currentPrime = getNextPrime(currentPrime, primeIndex);
+    currentPrime = getNextPrime(primeIndex);
     primeDisplay.textContent = currentPrime;
 }
 
 // Generar el siguiente número primo
-function getNextPrime(lastPrime, index) {
+function getNextPrime(index) {
     let count = 0;
-    let num = lastPrime;
+    let num = 1;
     while (count <= index) {
         num++;
         if (isPrime(num)) {
@@ -74,3 +85,4 @@ function isPrime(num) {
 
 // Evitar el menú contextual en la vista de primos
 primesView.addEventListener('contextmenu', event => event.preventDefault());
+
