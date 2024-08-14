@@ -64,7 +64,10 @@ button:hover {
     text-align: center;
 }
 
-/* Resto del CSS sin cambios */
+.prime-display {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
 
 #backToCalculator {
     background-color: #666;
@@ -73,10 +76,4 @@ button:hover {
 
 #nextPrime {
     background-color: #555;
-}
-
-
-.prime-display {
-    font-size: 2em;
-    margin-bottom: 20px;
 }
